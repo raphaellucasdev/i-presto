@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pessoa">
+            <h2><span>Pessoa</span> {{pessoa.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{pessoa.nome}}</span>
+                </dd>
+                <dt><span>Sobrenome</span></dt>
+                <dd>
+                    <span>{{pessoa.sobrenome}}</span>
+                </dd>
+                <dt><span>Nick</span></dt>
+                <dd>
+                    <span>{{pessoa.nick}}</span>
+                </dd>
+                <dt><span>Senha</span></dt>
+                <dd>
+                    <span>{{pessoa.senha}}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{pessoa.email}}</span>
+                </dd>
+                <dt><span>Cpf</span></dt>
+                <dd>
+                    <span>{{pessoa.cpf}}</span>
+                </dd>
+                <dt><span>Cnpj</span></dt>
+                <dd>
+                    <span>{{pessoa.cnpj}}</span>
+                </dd>
+                <dt><span>Telfixo</span></dt>
+                <dd>
+                    <span>{{pessoa.telfixo}}</span>
+                </dd>
+                <dt><span>Telcelular</span></dt>
+                <dd>
+                    <span>{{pessoa.telcelular}}</span>
+                </dd>
+                <dt><span>Logadouro</span></dt>
+                <dd>
+                    <span>{{pessoa.logadouro}}</span>
+                </dd>
+                <dt><span>Numero</span></dt>
+                <dd>
+                    <span>{{pessoa.numero}}</span>
+                </dd>
+                <dt><span>Cep</span></dt>
+                <dd>
+                    <span>{{pessoa.cep}}</span>
+                </dd>
+                <dt><span>Cidade</span></dt>
+                <dd>
+                    <span>{{pessoa.cidade}}</span>
+                </dd>
+                <dt><span>Bairro</span></dt>
+                <dd>
+                    <span>{{pessoa.bairro}}</span>
+                </dd>
+                <dt><span>Pais</span></dt>
+                <dd>
+                    <span>{{pessoa.pais}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

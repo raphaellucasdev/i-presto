@@ -1,0 +1,44 @@
+// JDL definition for application 'IPresto' generated with command 'jhipster export-jdl'
+
+entity Anuncio {
+  titulo String,
+  descricao String,
+  preco Float
+}
+entity Comentario {
+  mensagem String,
+  avaliacao Integer
+}
+entity Cliente {
+}
+entity Pessoa {
+  nome String,
+  sobrenome String,
+  nick String,
+  senha String,
+  email String,
+  cpf String,
+  cnpj String,
+  telfixo String,
+  telcelular String,
+  logadouro String,
+  numero Integer,
+  cep Integer,
+  cidade String,
+  bairro String,
+  pais String
+}
+entity Prestador {
+    media Integer,
+    contador Integer
+}
+
+relationship ManyToOne{
+	Prestador to Pessoa,
+    Cliente to Pessoa,
+    Anuncio to Prestador,
+    Comentario to Cliente,
+    Comentario to Anuncio  
+}
+
+service all with serviceImpl

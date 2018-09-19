@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.presto"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "monolith",
+    "baseName": "IPresto",
+    "packageName": "br.com.presto",
+    "packageFolder": "br/com/presto",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTI4N2ExYmVmYjY1MDdhZDUyMjFhZTMwZDRjMTExMjkyNzhmMzdlOTUzOGFhMWI2NTdiYjVlY2VmZmFlMWMxOWY5NzkxNGJkNmQ2YTFjNGY0MDU1ZWEzOTljMDZkYTc1NDQ4OTM1NjdiMjBiZDY1YzAyZjk1ZmFmN2QxNzAyMjA=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false,
+    "herokuDeployType": "git"
+  }
+}

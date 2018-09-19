@@ -1,0 +1,40 @@
+{
+    "name": "Anuncio",
+    "fields": [
+        {
+            "fieldName": "titulo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preco",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "prestador",
+            "otherEntityName": "prestador",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comentario",
+            "otherEntityName": "comentario",
+            "otherEntityRelationshipName": "anuncio"
+        }
+    ],
+    "changelogDate": "20180907145049",
+    "entityTableName": "anuncio",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

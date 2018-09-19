@@ -1,0 +1,36 @@
+{
+    "name": "Comentario",
+    "fields": [
+        {
+            "fieldName": "mensagem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avaliacao",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cliente",
+            "otherEntityName": "cliente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "anuncio",
+            "otherEntityName": "anuncio",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180907151224",
+    "entityTableName": "comentario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

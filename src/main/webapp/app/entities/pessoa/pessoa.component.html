@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span>Pessoas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pessoa" [routerLink]="['/pessoa/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Pessoa
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="pessoas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Nome</span></th>
+            <th><span>Sobrenome</span></th>
+            <th><span>Nick</span></th>
+            <th><span>Senha</span></th>
+            <th><span>Email</span></th>
+            <th><span>Cpf</span></th>
+            <th><span>Cnpj</span></th>
+            <th><span>Telfixo</span></th>
+            <th><span>Telcelular</span></th>
+            <th><span>Logadouro</span></th>
+            <th><span>Numero</span></th>
+            <th><span>Cep</span></th>
+            <th><span>Cidade</span></th>
+            <th><span>Bairro</span></th>
+            <th><span>Pais</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pessoa of pessoas ;trackBy: trackId">
+                <td><a [routerLink]="['/pessoa', pessoa.id, 'view' ]">{{pessoa.id}}</a></td>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.sobrenome}}</td>
+                <td>{{pessoa.nick}}</td>
+                <td>{{pessoa.senha}}</td>
+                <td>{{pessoa.email}}</td>
+                <td>{{pessoa.cpf}}</td>
+                <td>{{pessoa.cnpj}}</td>
+                <td>{{pessoa.telfixo}}</td>
+                <td>{{pessoa.telcelular}}</td>
+                <td>{{pessoa.logadouro}}</td>
+                <td>{{pessoa.numero}}</td>
+                <td>{{pessoa.cep}}</td>
+                <td>{{pessoa.cidade}}</td>
+                <td>{{pessoa.bairro}}</td>
+                <td>{{pessoa.pais}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/pessoa', pessoa.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pessoa/'+ pessoa.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

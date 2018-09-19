@@ -1,0 +1,27 @@
+{
+    "name": "Cliente",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comentario",
+            "otherEntityName": "comentario",
+            "otherEntityRelationshipName": "cliente"
+        }
+    ],
+    "changelogDate": "20180907151537",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

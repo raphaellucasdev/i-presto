@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-comentario-heading">Create or edit a Comentario</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!comentario.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="comentario.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mensagem">Mensagem</label>
+                    <input type="text" class="form-control" name="mensagem" id="field_mensagem"
+                        [(ngModel)]="comentario.mensagem" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_avaliacao">Avaliacao</label>
+                    <input type="number" class="form-control" name="avaliacao" id="field_avaliacao"
+                        [(ngModel)]="comentario.avaliacao" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cliente">Cliente</label>
+                    <select class="form-control" id="field_cliente" name="cliente" [(ngModel)]="comentario.cliente" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clienteOption.id === comentario.cliente?.id ? comentario.cliente : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackClienteById">{{clienteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_anuncio">Anuncio</label>
+                    <select class="form-control" id="field_anuncio" name="anuncio" [(ngModel)]="comentario.anuncio" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="anuncioOption.id === comentario.anuncio?.id ? comentario.anuncio : anuncioOption" *ngFor="let anuncioOption of anuncios; trackBy: trackAnuncioById">{{anuncioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+    "name": "Prestador",
+    "fields": [
+        {
+            "fieldName": "media",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "contador",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "anuncio",
+            "otherEntityName": "anuncio",
+            "otherEntityRelationshipName": "prestador"
+        }
+    ],
+    "changelogDate": "20180907160440",
+    "entityTableName": "prestador",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

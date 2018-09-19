@@ -1,0 +1,88 @@
+{
+    "name": "Pessoa",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sobrenome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nick",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "senha",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cpf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnpj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telfixo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telcelular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logadouro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cep",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cidade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bairro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pais",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "prestador",
+            "otherEntityName": "prestador",
+            "otherEntityRelationshipName": "pessoa"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cliente",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "pessoa"
+        }
+    ],
+    "changelogDate": "20180907152111",
+    "entityTableName": "pessoa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prestador">
+            <h2><span>Prestador</span> {{prestador.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Media</span></dt>
+                <dd>
+                    <span>{{prestador.media}}</span>
+                </dd>
+                <dt><span>Contador</span></dt>
+                <dd>
+                    <span>{{prestador.contador}}</span>
+                </dd>
+                <dt><span>Pessoa</span></dt>
+                <dd>
+                    <div *ngIf="prestador.pessoa">
+                        <a [routerLink]="['/pessoa', prestador.pessoa?.id, 'view']">{{prestador.pessoa?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prestador', prestador.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

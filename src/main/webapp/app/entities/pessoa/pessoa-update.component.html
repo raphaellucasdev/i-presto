@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-pessoa-heading">Create or edit a Pessoa</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!pessoa.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="pessoa.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                        [(ngModel)]="pessoa.nome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" name="sobrenome" id="field_sobrenome"
+                        [(ngModel)]="pessoa.sobrenome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nick">Nick</label>
+                    <input type="text" class="form-control" name="nick" id="field_nick"
+                        [(ngModel)]="pessoa.nick" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_senha">Senha</label>
+                    <input type="text" class="form-control" name="senha" id="field_senha"
+                        [(ngModel)]="pessoa.senha" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="pessoa.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cpf">Cpf</label>
+                    <input type="text" class="form-control" name="cpf" id="field_cpf"
+                        [(ngModel)]="pessoa.cpf" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cnpj">Cnpj</label>
+                    <input type="text" class="form-control" name="cnpj" id="field_cnpj"
+                        [(ngModel)]="pessoa.cnpj" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telfixo">Telfixo</label>
+                    <input type="text" class="form-control" name="telfixo" id="field_telfixo"
+                        [(ngModel)]="pessoa.telfixo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telcelular">Telcelular</label>
+                    <input type="text" class="form-control" name="telcelular" id="field_telcelular"
+                        [(ngModel)]="pessoa.telcelular" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_logadouro">Logadouro</label>
+                    <input type="text" class="form-control" name="logadouro" id="field_logadouro"
+                        [(ngModel)]="pessoa.logadouro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                        [(ngModel)]="pessoa.numero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cep">Cep</label>
+                    <input type="number" class="form-control" name="cep" id="field_cep"
+                        [(ngModel)]="pessoa.cep" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cidade">Cidade</label>
+                    <input type="text" class="form-control" name="cidade" id="field_cidade"
+                        [(ngModel)]="pessoa.cidade" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bairro">Bairro</label>
+                    <input type="text" class="form-control" name="bairro" id="field_bairro"
+                        [(ngModel)]="pessoa.bairro" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pais">Pais</label>
+                    <input type="text" class="form-control" name="pais" id="field_pais"
+                        [(ngModel)]="pessoa.pais" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
